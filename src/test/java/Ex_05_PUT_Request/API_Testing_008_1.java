@@ -14,8 +14,8 @@ public class API_Testing_008_1 {
     @Test
     public void test_put_non_bdd(){
 
-        String token = "b69f0c72868d12d";
-        String bookingid = "6539";
+        String token = "66efd6501f45e7a";
+        String bookingid = "9884";
 
         String payloadPUT= "{\n" +
                 "    \"firstname\" : \"Saurabh\",\n" +
