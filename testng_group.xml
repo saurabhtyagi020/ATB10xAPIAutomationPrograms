@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Testing">
+    <test name="APT Test case">
+
+    <groups>
+        <run>
+            <include name="p1">
+            </include>
+        </run>
+
+    </groups>
+        <classes>
+            <class name="Ex_09_TestngExample.TestNG_GROUP_015"/>
+
+        </classes>
+    </test>
+</suite>

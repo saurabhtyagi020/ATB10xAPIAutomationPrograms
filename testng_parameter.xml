@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Testing">
+    <test name="APT Test case">
+
+   <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Ex_09_TestngExample.TestNG_Parameter_016"/>
+
+        </classes>
+    </test>
+</suite>
