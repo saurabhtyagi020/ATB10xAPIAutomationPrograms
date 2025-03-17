@@ -1,13 +1,19 @@
 package Ex_10_Assertion;
 
+
+import static org.assertj.core.api.Assertions.assertThat;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+
+
 
 
 public class APITesting_018_All_Assert {
@@ -49,9 +55,27 @@ public class APITesting_018_All_Assert {
         vr.body("booking.depositpaid",Matchers.equalTo(true));
         vr.body("bookingid",Matchers.notNullValue());
 
+
+
+        // Extract the value from  response
+        String firstname=response.then().extract().path("booking.firstname");
+        String lastname=response.then().extract().path("booking.lastname");
+        Integer bookingId = response.then().extract().path("bookingid");
+
         //TestNg Assertion
 
+       // Assert.assertEquals(firstname,"Raja");
         SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(firstname,"Raja");
+        softAssert.assertEquals(lastname,"Ram");
+        softAssert.assertNotNull(bookingId);
+
+        //Assertj
+
+        assertThat(bookingId).isNotNull().isNotZero().isPositive();
+        assertThat(firstname).isNotNull().isNotBlank().isNotEmpty().isEqualTo("Raja");
+        assertThat(lastname).isNotNull().isNotBlank().isNotEmpty().isEqualTo("Ram");
+
 
 
 
