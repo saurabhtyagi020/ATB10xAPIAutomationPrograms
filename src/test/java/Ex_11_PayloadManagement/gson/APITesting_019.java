@@ -68,7 +68,7 @@ public class APITesting_019 {
 
         // Case1 - extract() - Direct Extraction
 
-    //        String bookingId1=response.then().extract().path("bookingid");
+       //  String bookingId1=response.then().extract().path("bookingid");
            String firstname1=response.then().extract().path("booking.firstname");
         String checkin1=response.then().extract().path("booking.bookingdates.checkin");
        // System.out.println(bookingId1);
@@ -77,6 +77,7 @@ public class APITesting_019 {
 
         Assert.assertEquals(firstname1,"Saurabh");
         Assert.assertEquals(checkin1,"2024-02-01");
+      //  Assert.assertNotNull(bookingId1);
 
         assertThat(firstname1).isNotNull().isNotEmpty().isNotBlank().isEqualTo("Saurabh");
 
